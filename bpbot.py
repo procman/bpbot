@@ -244,7 +244,7 @@ class BPTable:
             return 0
         with open(self.filename, encoding='utf-8', newline='') as f:
             for row in csv.reader(f):
-                casefold_user = row[0]
+                casefold_user = row[0].casefold()
                 display_user = row[1]
                 amount = int(row[2])
                 self.bp[casefold_user] = BPTable.Entry(display_user, amount)
